@@ -10,13 +10,19 @@ root.resizable(False,False)
 root.title('Naruto Series Dialouges')
 dialouges=ts.init()
 voices = dialouges.getProperty('voices')
+
+#use english+f1 or english+f2 for female voice
+
 dialouges.setProperty('voice', 'english+f11')
-newVoiceRate = 145
+newVoiceRate = 145 
 dialouges.setProperty('rate',newVoiceRate)
 
+#dialouge function converts text to speech i.e, quotes recited by machine
 def dialouge(character):
     dialouges.say(iconic_dialouges_naruto[character])
     dialouges.runAndWait()
+
+#create a seperate function for every character
 def Naruto():
     dialouge('Naruto')
 def Sasuke():
@@ -48,6 +54,7 @@ def Gaara():
 def Neji():
     dialouge('Neji')
 
+#this is the standard function to resize the image, use character as parameter to avoid code reuseability
 def images(character):
     image = Image.open('images/{}.png'.format(character))
     image = image.resize((250, 250), Image.ANTIALIAS)
@@ -57,6 +64,7 @@ def main():
     frame=tk.Frame(root)
     frame.pack(fill="both",expand=1)
 
+    #set up scroll bar for gui
     canva = tk.Canvas(frame)
     canva.pack(side="left",fill="both",expand=1)
 
@@ -68,6 +76,8 @@ def main():
 
     secondframe = tk.Frame(canva)
     canva.create_window((0,0),window=secondframe,anchor="n")
+
+    #once the image is resized return it into a variable
 
     naruto_img = ImageTk.PhotoImage(images('naruto'))
     sasuke_img = ImageTk.PhotoImage(images('sasuke'))
@@ -85,6 +95,7 @@ def main():
     gaara_img =  ImageTk.PhotoImage(images('gaara'))
     shikamaru_img =  ImageTk.PhotoImage(images('shikamaru'))
 
+    #we use image instead of text as button
     naruto=tk.Button(secondframe,image=naruto_img,command=Naruto,bg='yellow').grid(row=0,column=1,ipadx=5,ipady=5)
     sasuke=tk.Button(secondframe,image=sasuke_img,command=Sasuke,bg='blue').grid(row=0,column=2,ipadx=5,ipady=5)
     itachi=tk.Button(secondframe,image=itachi_img,command=Itachi,bg='orangered').grid(row=0,column=3,ipadx=5,ipady=5)
@@ -105,3 +116,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
