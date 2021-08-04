@@ -1,7 +1,7 @@
 iconic_dialouges_naruto = {
     "Naruto":"When you are alive you need a reason for your existence, Being Unable to find one is same as being dead",
     "Sasuke":"I shut my eyes a long time ago... the things I seek... now lies only in the darkness",
-    "Itachi":"Dont be so quick..., to judge me. After all you only see what i choose to show you",
+    "Itachi":"People lives doesn't end when they die, it ends when they lose hope",
     "Madara":"Wake up to reality... nothing ever goes as planned in this accursed world... the longer you live the more you realize the only thing that truly exist in this reality is pain, suffering and futility.",
     "Orochimaru":"Its the human nature not to realize the true value of something unless they lose it",
     "Jiraiya":"A place where someone still thinks about you is a place you can call home",
